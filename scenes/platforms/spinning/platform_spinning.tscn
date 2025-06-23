@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://chw0t8qvjbsw2"]
+
+[ext_resource type="Script" uid="uid://cj2ej0f0pkdo1" path="res://scenes/platforms/spinning/platform_spinning.gd" id="1_3j8dr"]
+[ext_resource type="Texture2D" uid="uid://bq74mprd2mt5o" path="res://scenes/platforms/spinning/platform_spinning.png" id="2_n2hjg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1st81"]
+atlas = ExtResource("2_n2hjg")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6m7n"]
+atlas = ExtResource("2_n2hjg")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0roi0"]
+atlas = ExtResource("2_n2hjg")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyjj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1st81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6m7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0roi0")
+}],
+"loop": true,
+"name": &"spinning",
+"speed": 10.0
+}]
+
+[node name="PlatformSpinning" type="StaticBody2D"]
+script = ExtResource("1_3j8dr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_yyjj1")
+animation = &"spinning"
+autoplay = "spinning"
+frame_progress = 0.37198
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(42.5, 14)
+polygon = PackedVector2Array(-106.5, -14, -42.5, 18, 21.5, -14)
+one_way_collision_margin = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-64, -32, 64, -32, 0, 0)

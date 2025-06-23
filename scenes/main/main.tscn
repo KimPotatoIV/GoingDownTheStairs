@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://e1vbxq8t28ma"]
+
+[ext_resource type="PackedScene" uid="uid://u313mpff6n5l" path="res://scenes/player/player.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://ce7aafnkgmobx" path="res://scenes/background/background.tscn" id="1_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://ctcvo2wk6r5sw" path="res://scenes/spawner/spawner.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://btfcaf3padauf" path="res://scenes/platforms/normal/platform_normal.tscn" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://by13ji7l1gtgl" path="res://scenes/hud/hud.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://cfj5cgexv0ihb" path="res://scenes/spike_ceiling/spike_ceiling.tscn" id="6_ow5a4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("5_6q06x")]
+
+[node name="Background" parent="." instance=ExtResource("1_k2fmo")]
+
+[node name="Spawner" parent="." instance=ExtResource("3_k2fmo")]
+
+[node name="Player" parent="." instance=ExtResource("1_hyk8p")]
+position = Vector2(180, 400)
+
+[node name="PlatformNormal" parent="." instance=ExtResource("4_l3cfh")]
+position = Vector2(180, 480)
+
+[node name="SpikeCeiling" parent="." instance=ExtResource("6_ow5a4")]

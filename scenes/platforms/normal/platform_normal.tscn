@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://btfcaf3padauf"]
+
+[ext_resource type="Script" uid="uid://bd5dfg83ilej0" path="res://scenes/platforms/normal/platform_normal.gd" id="1_aghmr"]
+[ext_resource type="Texture2D" uid="uid://blso4bk82k71u" path="res://scenes/platforms/normal/platform_normal.png" id="1_ko18x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aghmr"]
+size = Vector2(128, 20)
+
+[node name="PlatformNormal" type="StaticBody2D"]
+script = ExtResource("1_aghmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("1_ko18x")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_aghmr")
+one_way_collision_margin = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-64, -32, 64, -32, 0, 0)

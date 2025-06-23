@@ -1,0 +1,24 @@
+File: maou_bgm_8bit28.ogg
+Author: 森田交一
+Title: 8bit28
+Source: https://maou.audio/bgm_8bit28/
+
+File: maou_se_8bit03.wav
+Author: 森田交一
+Title: レトロ03
+Source: https://maou.audio/se_8bit03/
+
+File: maou_se_sound23.wav
+Author: 森田交一
+Title: ローラー
+Source: https://maou.audio/se_sound23/
+
+File: maou_se_battle07.wav
+Author: 森田交一
+Title: 戦闘07
+Source: https://maou.audio/se_battle07/
+
+File: maou_se_battle17.wav
+Author: 森田交一
+Title: 戦闘17
+Source: https://maou.audio/se_battle17/

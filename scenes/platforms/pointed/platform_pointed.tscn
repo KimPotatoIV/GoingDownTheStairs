@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmqahutjw3w5k"]
+
+[ext_resource type="Texture2D" uid="uid://bxbmg6k3hdp2q" path="res://scenes/platforms/pointed/platform_pointed.png" id="1_3nyir"]
+[ext_resource type="Script" uid="uid://823xlynocrit" path="res://scenes/platforms/pointed/platform_pointed.gd" id="1_nlsgt"]
+
+[node name="PlatformPointed" type="StaticBody2D"]
+script = ExtResource("1_nlsgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("1_3nyir")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(42.5, 14)
+polygon = PackedVector2Array(-106.5, -14, -42.5, 18, 21.5, -14)
+one_way_collision_margin = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-64, -32, 64, -32, 0, 0)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnge0cb7qg8b2"]
+
+[ext_resource type="Script" uid="uid://b8ere7qhe5g6q" path="res://scenes/platforms/smashed/platform_smashed.gd" id="1_6cyf4"]
+[ext_resource type="Texture2D" uid="uid://b8x186dsx5hn1" path="res://scenes/platforms/smashed/platform_smashed.png" id="2_10jmh"]
+
+[node name="PlatformSmashed" type="StaticBody2D"]
+script = ExtResource("1_6cyf4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+texture = ExtResource("2_10jmh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(42.5, 14)
+polygon = PackedVector2Array(-106.5, -14, -42.5, 18, 21.5, -14)
+one_way_collision_margin = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-64, -32, 64, -32, 0, 0)
