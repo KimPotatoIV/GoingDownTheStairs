@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://ce7aafnkgmobx"]
+[gd_scene load_steps=9 format=4 uid="uid://ce7aafnkgmobx"]
 
 [ext_resource type="Texture2D" uid="uid://dxc4gw53an4q5" path="res://scenes/background/tilemap.png" id="1_iheb5"]
+[ext_resource type="Script" uid="uid://b7git5cpgicod" path="res://scenes/background/background.gd" id="1_rsf5d"]
+[ext_resource type="Texture2D" uid="uid://ytee7yxme8uo" path="res://scenes/background/background_fan.png" id="2_pesyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pesyb"]
 texture = ExtResource("1_iheb5")
@@ -412,14 +414,63 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_pesyb")
 
-[node name="Background" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsf5d"]
+atlas = ExtResource("2_pesyb")
+region = Rect2(0, 0, 128, 128)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(384, 640)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewwm8"]
+atlas = ExtResource("2_pesyb")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jjv1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsf5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewwm8")
+}],
+"loop": true,
+"name": &"fan",
+"speed": 10.0
+}]
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_rsf5d")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAGAAYAAAAKAAMAAAAGAAUAAAAKAAMAAAAGAAQAAAAKAAMAAAAGAAMAAAAKAAMAAAAGAAIAAAAKAAMAAAAGAAEAAAAKAAMAAAAGAAAAAAAKAAMAAAD//wAAAAAKAAMAAAD//wEAAAAKAAMAAAD//wIAAAAKAAMAAAD//wMAAAAKAAMAAAD//wQAAAAKAAMAAAD//wUAAAAKAAMAAAD//wYAAAAKAAMAAAD//wcAAAAKAAMAAAD//wgAAAAKAAMAAAD//wkAAAAKAAMAAAAGAAcAAAAKAAMAAAAGAAgAAAAKAAMAAAAGAAkAAAAKAAMAAAA=")
 tile_set = SubResource("TileSet_rsf5d")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D"]
+custom_minimum_size = Vector2(384, 640)
+offset_right = 384.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.215686)
+position = Vector2(105, 498)
+sprite_frames = SubResource("SpriteFrames_jjv1t")
+animation = &"fan"
+autoplay = "fan"
+frame_progress = 0.806413
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.215686)
+position = Vector2(280, 324)
+sprite_frames = SubResource("SpriteFrames_jjv1t")
+animation = &"fan"
+autoplay = "fan"
+frame_progress = 0.306408
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Parallax2D"]
+modulate = Color(1, 1, 1, 0.215686)
+position = Vector2(190, 139)
+sprite_frames = SubResource("SpriteFrames_jjv1t")
+animation = &"fan"
+autoplay = "fan"
+frame_progress = 0.306408
