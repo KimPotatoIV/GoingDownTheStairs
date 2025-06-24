@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://e1vbxq8t28ma"]
+[gd_scene load_steps=8 format=3 uid="uid://e1vbxq8t28ma"]
 
+[ext_resource type="Script" uid="uid://t4ohff1mcx0y" path="res://scenes/main/main.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://u313mpff6n5l" path="res://scenes/player/player.tscn" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ce7aafnkgmobx" path="res://scenes/background/background.tscn" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ctcvo2wk6r5sw" path="res://scenes/spawner/spawner.tscn" id="3_k2fmo"]
@@ -8,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cfj5cgexv0ihb" path="res://scenes/spike_ceiling/spike_ceiling.tscn" id="6_ow5a4"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_hujxm")
+
+[node name="ShakeCamera" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="HUD" parent="." instance=ExtResource("5_6q06x")]
 

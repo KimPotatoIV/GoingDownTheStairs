@@ -23,10 +23,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 48
-theme_override_constants/margin_right = 24
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TextureRect0" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

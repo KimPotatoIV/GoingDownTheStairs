@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	damaged_timer_node.wait_time = 0.25
 	damaged_timer_node.connect("timeout", Callable(self, "_on_damaged_timer_timeout"))
-	unstuck_timer_node.wait_time = 0.25
+	unstuck_timer_node.wait_time = 0.35
 	unstuck_timer_node.connect("timeout", Callable(self, "_on_unstuck_timer_timeout"))
 	
 	add_to_group("Player")

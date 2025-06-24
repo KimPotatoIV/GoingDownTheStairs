@@ -446,11 +446,9 @@ tile_set = SubResource("TileSet_rsf5d")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Parallax2D"]
-custom_minimum_size = Vector2(394, 650)
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 389.0
-offset_bottom = 645.0
+custom_minimum_size = Vector2(384, 640)
+offset_right = 384.0
+offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax2D"]
