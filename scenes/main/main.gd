@@ -13,6 +13,7 @@ var shake_timer: float = 0.0
 ##################################################
 func _ready() -> void:
 	shake_camera_node = $ShakeCamera
+	Engine.time_scale = 2
 
 ##################################################
 func _process(delta: float) -> void:
